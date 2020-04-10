@@ -19,6 +19,8 @@ class Welcome extends React.Component {
                     <p>Edit <code>src/view/components/App.js</code> and save to reload.</p>
                     {this.state.data ? <p>{this.state.data.data}</p> : null}
                     <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a>
+                    <br/>
+                    <button className='btn btn-success' onClick={this.testConnect}>Test API connection</button>
                 </header>
             </div>
         );
