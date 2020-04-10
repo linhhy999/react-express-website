@@ -10,7 +10,7 @@ router.post('/login', function(req, res, next) {
     UserModel.login({username: req.body.username, password: req.body.password}, (modelRes) => {
         if (modelRes.error)
             res.status(modelRes.error.code ? modelRes.error.code : 500)
-        else 
+        else
             req.session.username = req.body.username;
         res.json(modelRes)
     })

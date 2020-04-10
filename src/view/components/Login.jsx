@@ -11,7 +11,7 @@ class Login extends React.Component {
     login = (e) => {
         e.preventDefault();
         let data = {
-            email: $("#email").val(),
+            username: $("#username").val(),
             password: $("#password").val()
         }
         console.log('hihihihi:');
@@ -27,9 +27,8 @@ class Login extends React.Component {
                 <h2>Log in now!</h2>
                 <form>
                   <div className="form-group">
-                    <label htmlFor="email">Email address</label>
-                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label htmlFor="username">Username</label>
+                    <input type="text" className="form-control" id="username" placeholder="Enter username"/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>

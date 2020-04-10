@@ -72,16 +72,12 @@ var UserModel = {
         })
     },
     login: (userData, done) => {
-        User.findOne({username: userData.username}, (error, data)=>{
-            if (error){
+        User.findOne({username: userData.username, password: userData.password}, (error, data)=>{
+            if (error) {
                 error.code = 500
                 done && done({error})
             }
-            else if (!!data) {
-                if (data.password != userData.password)
-                    done && done({ error: { message:"The username or password you entered isn't correct. Try entering it again.", code: 400 } })
-                else done && done({data})
-            }
+            else if (!!data) done && done({data})
             else done && done({ error: { message:"The username or password you entered isn't correct. Try entering it again.", code: 400 } })
         })
     },
